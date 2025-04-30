@@ -1,8 +1,6 @@
 import { symmetricDecrypt } from "@/lib/encryption";
 import prisma from "@/lib/prisma";
-// ai model importing require api keys purchase , open ai + deepseek in openai
 import OpenAI from "openai";
-// gemini model importing complex, do not have automated token consumpton counting
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ExecutionEnvironment } from "../../../types/executor";
 import { ExtractDataWithAITask } from "../task/ExtractDataWithAI";
