@@ -80,12 +80,6 @@ npm install
 npm start
 ```
 
-or
-
-```bash
-node index.js
-```
-
 ---
 
 ## 🧠 How NetSift Works
