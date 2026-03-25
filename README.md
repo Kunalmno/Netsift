@@ -2,7 +2,7 @@
 
 > A powerful and extensible network data processing and filtering tool designed for performance, scalability, and developer control.
 
-NetSift enables efficient handling, filtering, and extraction of meaningful insights from network datasets or traffic logs. Built with a modular architecture, it is designed for developers who need fine-grained control over network-level data processing.
+Netsift is a full-stack web scraping platform designed for authenticated users to configure, schedule, and monitor scraping tasks through a visual workflow interface. Built with modern technologies like Next.js, Prisma, Puppeteer.
 
 ---
 
