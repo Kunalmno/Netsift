@@ -39,17 +39,28 @@ Modern applications generate massive amounts of network data. Extracting useful 
 
 ```
 
+
+
+
+
 NetSift/
-│── src/                  # Core logic
-│   ├── parser/           # Input parsing logic
-│   ├── filters/          # Filtering modules
-│   ├── processor/        # Data processing
-│   └── utils/            # Helper utilities
-│
-│── config/               # Configurations
-│── tests/                # Unit tests
-│── assets/               # Static resources
-│── package.json
+│── actions/                  
+│   ├── analytics
+│   ├── billing
+│   ├── credentials
+│   ├── workflows
+│  
+│── app/
+│   ├── (auth)
+│   ├── (dashboard)
+│   ├── api
+│   ├── setup
+│   ├── workflow
+│  
+│── components/                
+│── lib/               
+│── prisma
+│── schema
 │── README.md
 
 ````
