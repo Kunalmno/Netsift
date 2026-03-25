@@ -1,148 +1,185 @@
+# 🧠 NetSift
 
-# Netsift
+> A powerful and extensible network data processing and filtering tool designed for performance, scalability, and developer control.
 
-A full-stack, modular web-scraping platform enabling authenticated users to design, schedule and monitor data-extraction workflows. Netsift combines a visual pipeline builder, real-time logging, role-based access control and subscription management to deliver a scalable solution for automated data gathering and reporting.
-
----
-
-## Table of Contents
-
-1. Key Features  
-2. Architecture Overview  
-3. Tech Stack  
-4. Getting Started  
-   - Prerequisites  
-   - Installation  
-   - Environment Variables  
-   - Database Setup  
-   - Running the Application  
-5. Usage  
-   - User Registration & Authentication  
-   - Creating a Scrape Workflow  
-   - Scheduling & Monitoring  
-6. Subscription & Monetization  
-7. Contributing  
-8. License  
+NetSift enables efficient handling, filtering, and extraction of meaningful insights from network datasets or traffic logs. Built with a modular architecture, it is designed for developers who need fine-grained control over network-level data processing.
 
 ---
 
-## Key Features
+## 🚀 Overview
 
-- **Visual Pipeline Builder**: Drag-and-drop interface for defining multi-step scraping flows.  
-- **Flexible Scheduling**: Cron-expression support with human-readable previews.  
-- **Subscription Management**: Stripe integration for freemium and paid plans.  
-- **Dynamic Dashboards**: Interactive charts and tables for quick data insights.  
+Modern applications generate massive amounts of network data. Extracting useful insights from that data is often complex and inefficient.
 
----
-
-## Architecture Overview
-
-Frontend (Next.js, Tailwind) <--> Backend (Express + Prisma) <--> MySqlite 
-↕  
-Scraping Engine (Puppeteer, Cheerio)  
-↕  
-Scheduler (cron-parser, cronstrue)  
-↕  
-Visualization (Recharts)
+**NetSift solves this by:**
+- Structuring raw network data
+- Applying customizable filtering pipelines
+- Producing clean, analyzable outputs
 
 ---
 
-## Tech Stack
+## ✨ Core Features
 
-**Frontend**:  
-- Next.js (React framework)  
-- Tailwind CSS  
-- Clerk (authentication)  
-- React Hook Form + Zod (validation)  
-- XYFlow (pipeline builder)  
+### 🔍 Intelligent Filtering
+- Apply rule-based filtering on network data
+- Custom filter pipelines for flexible workflows
 
-**Backend & Database**:  
-- Node.js + Express  
-- Prisma ORM + PostgreSQL  
-- cron-parser & cronstrue (scheduling)  
+### ⚡ Drag and Drop Woekflow
+- Drag and drop workflow cards to simulate the scrapping
 
-**Scraping Engine**:  
-- Puppeteer (dynamic content)  
-- Cheerio (static HTML)  
+### 🧩 Modular Architecture
+- Easily extendable components
+- Plug-and-play design for custom modules
 
-**Visualization**:  
-- Recharts  
+### 📊 Data Extraction
+- Extract patterns and structured outputs
+- Prepare data for analytics or ML pipelines
 
-**Payments**:  
-- Stripe  
 
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or later)
-- Yarn or npm  
-
-### Installation
-
-1. Clone the repository:  
-   `git clone https://github.com/your-org/netsift.git`  
-   `cd netsift`
-
-2. Install dependencies:  
-   `yarn install`  
-   *or*  
-   `npm install`
-
-### Database Setup
-
-Run Prisma migration and generate client:
+## 📁 Project Structure
 
 ```
-npx prisma migrate deploy  
-npx prisma generate
+
+NetSift/
+│── src/                  # Core logic
+│   ├── parser/           # Input parsing logic
+│   ├── filters/          # Filtering modules
+│   ├── processor/        # Data processing
+│   └── utils/            # Helper utilities
+│
+│── config/               # Configurations
+│── tests/                # Unit tests
+│── assets/               # Static resources
+│── package.json
+│── README.md
+
+````
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/Kunalmno/Netsift.git
+cd Netsift
+npm install
+````
+
+---
+
+## ▶️ Usage
+
+### Run the project
+
+```bash
+npm start
 ```
 
-### Running the Application
+or
 
-**Development**:  
-- `npm run dev` command for running the app.
-- `npx prisma studio` command for running the database.
-### NOTE : these steps are important for live update of stripe payment and invoices generation.
-- `stripe login` for starting stripe session.
-- `Stripe listen --forward -to localhost:3000/api/webhooks/stripe` after stripe login
-- `Stripe trigger payment_intent.succeeded` use this in new terminal after stripe listen command
-
+```bash
+node index.js
+```
 
 ---
 
-## Usage
+## 🧠 How NetSift Works
 
-### User Registration & Authentication
+1. **Data Input**
 
-- Sign up via clerk authenticated page.
-- All authentication is managed via clerk, tan-stack query.
-- All data is encrypted.
+   * Accepts logs, packets, or structured datasets
 
-### Creating a Scrape Workflow
+2. **Parsing**
 
-- Use the **Workflow Builder**  
-- Drag and connect nodes (Request, Parse, Transform)  
-- Define selectors, schedule, and save
+   * Converts raw data into structured format
 
-### Scheduling & Monitoring
+3. **Filtering**
 
-- View cron-based schedules and next run  
-- Access task logs, error messages, and data status in real time
+   * Applies rule-based or conditional filters
 
----
+4. **Processing**
 
-## Subscription & Monetization
+   * Extracts patterns and meaningful insights
 
-- **Free Plan**: 100 credits provided on account creation, 
-- **Premium Plan**: Purchase credits as per the requirement allowing more dynamic scraping.
-- Billing handled through **Stripe**
+5. **Output**
+
+   * Returns clean, structured data for further use
 
 ---
 
-## Created By
+## 🔧 Configuration
 
-@ Harsh Vashisht [2201060157]
-@ Kunal Pandey [2201060150]
+You can customize behavior via config files:
+
+```json
+{
+  "filters": ["ip", "protocol", "port"],
+  "outputFormat": "json",
+  "logLevel": "info"
+}
+```
+
+---
+
+## 🧪 Testing
+
+```bash
+npm test
+```
+
+---
+
+## 📈 Use Cases
+
+* Network traffic analysis
+* Log filtering and monitoring
+* Security analysis pipelines
+* Preprocessing for machine learning
+* Backend analytics systems
+
+---
+
+## 🚧 Roadmap
+
+* [ ] Real-time packet inspection
+* [ ] Drag and Drop Workflow
+* [ ] Web dashboard (visual analytics)
+* [ ] ML-based anomaly detection
+* [ ] Streaming pipeline support
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+# Fork repo
+# Create feature branch
+git checkout -b feature/your-feature
+
+# Commit changes
+git commit -m "Add feature"
+
+# Push
+git push origin feature/your-feature
+```
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 👤 Author
+
+**Kunal**
+GitHub: [https://github.com/Kunalmno](https://github.com/Kunalmno)
+
+---
+
+## ⭐ Support
+
+If you found this useful, give it a ⭐ and help the project grow!
+
