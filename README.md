@@ -38,11 +38,6 @@ Modern applications generate massive amounts of network data. Extracting useful 
 ## 📁 Project Structure
 
 ```
-
-
-
-
-
 NetSift/
 │── actions/                  
 │   ├── analytics
